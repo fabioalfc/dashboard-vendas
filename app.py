@@ -23,10 +23,17 @@ col2.metric("Nº de Pedidos", num_pedidos)
 col3.metric("Clientes Únicos", num_clientes)
 col4.metric("Vendedores", num_vendedores)
 
-# Timeline de vendas
+# Texto com participação do e-commerce
+st.markdown(f"""
+🔎 **Participação do E-commerce:**
+- Resultado do e-commerce representa **9,88%** das vendas do time de revenda.
+- Resultado do e-commerce representa **6,15%** das vendas totais da empresa.
+""")
+
+# Vendas por Data em gráfico de barras
 st.subheader("📅 Vendas por Data")
 vendas_por_dia = df_valid.groupby(df_valid['dt_hr_criacao'].dt.date)['valor_total_atendido'].sum().reset_index()
-fig_timeline = px.line(vendas_por_dia, x='dt_hr_criacao', y='valor_total_atendido', title="Evolução das Vendas Diárias")
+fig_timeline = px.bar(vendas_por_dia, x='dt_hr_criacao', y='valor_total_atendido', title="Vendas Diárias")
 st.plotly_chart(fig_timeline, use_container_width=True)
 
 # Análise por Vendedor
