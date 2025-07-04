@@ -8,7 +8,8 @@ resumo_cliente = pd.read_csv("resumo_cliente.csv")
 df_valid = pd.read_csv("df_valid.csv", parse_dates=['dt_hr_criacao'])
 
 st.set_page_config(page_title="Dashboard Vendas", layout="wide")
-st.title("📊 Dashboard Interativo de Vendas")
+st.image("logo_empresa.png", width=300)  # ajuste o tamanho com width
+st.title("📊 Dashboard Interativo de Vendas Ecommerce Boni")
 
 # KPIs principais
 valor_total = df_valid['valor_total_atendido'].sum()
