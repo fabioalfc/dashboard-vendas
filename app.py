@@ -31,6 +31,15 @@ st.markdown(f"""
 - Resultado do e-commerce representa **6,15%** das vendas totais da empresa.
 """)
 
+# Informações sobre clientes ativos e conversão
+st.markdown(f"""
+📌 **Clientes Ativos e Conversão no Site:**
+- Total de clientes ativos: **1.288**, desses **514** já fizeram ou fazem pedidos.
+- Canal Obra: **178** ativos, **30** já fizeram ou fazem pedidos.
+- Canal Revenda: **1.110** ativos, **484** já fizeram ou fazem pedidos.
+""")
+
+
 # Vendas por Data em gráfico de barras
 st.subheader("📅 Vendas por Data")
 vendas_por_dia = df_valid.groupby(df_valid['dt_hr_criacao'].dt.date)['valor_total_atendido'].sum().reset_index()
